@@ -123,9 +123,6 @@ printf "[update-factorio.sh] server version : %s\n" "$SERVER_VERSION"
 LATEST_STABLE_VERSION=$(printf "$AVAIABLE_VERSIONS" | sed -e s/},{/\\n/g -e s/}]}//g -e s/\"//g | awk 'BEGIN{FS=":"} /stable/ {printf $2}')
 printf "[update-factorio.sh] Latest stable version : %s\n" "$LATEST_STABLE_VERSION"
 
-# for test only
-SERVER_VERSION="1.1.24"
-
 # If needed, fetch the patch and update
 if [[ $SERVER_VERSION == $LATEST_STABLE_VERSION ]]
 then
