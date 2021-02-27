@@ -130,8 +130,7 @@ then
   exit 0
 else
   printf "[update-factorio.sh] Factorio is not on the latest stable version, checking for update\n"
-  printf "$AVAIABLE_VERSIONS" | sed -e s/},{/\\n/g | grep \"from\"\:\"$SERVER_VERSION\",\"to\"\:\"$LATEST_STABLE_VERSION\" > /dev/null
-  if [[ $? == "0" ]]
+  if [[ $(printf "$AVAIABLE_VERSIONS" | sed -e s/},{/\\n/g | grep \"from\"\:\"$SERVER_VERSION\",\"to\"\:\"$LATEST_STABLE_VERSION\") ]]
   then
     printf "[update-factorio.sh] Update avaiable, trying to get download patch link :\n"
     DOWNLOAD_LINK=$(GET https://updater.factorio.com/get-download-link?username=$USERNAME\&token=$TOKEN\&package=$PACKAGE\&from=$SERVER_VERSION\&to=$LATEST_STABLE_VERSION\&apiversion=$APIVERSION | sed -e s/\\[\"//g -e s/\"]//g)
