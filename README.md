@@ -12,6 +12,19 @@ Username, token and factorio binary path can be definded in the global variables
   -t, --token         : Your factorio.com authentication token
   -p, --path          : Factorio binary path
 ```
+## update-mods.sh
+This is a simple script to keep installed mods up to date.
+### Use :
+Username, token can be definded in the global variables of this script.
+```
+  -h, --help          : Print this help
+  -v, --version       : Print version
+
+  -u, --username      : Your factorio.com username
+  -t, --token         : Your factorio.com authentication token
+```
+## factorio.sh
+This is a quick example to maintain server up to date when you launch it.
 ## Licence :
 Copyright (C) 2021 Jeremie SALVI.
 License GPLv3+: GNU GPL version 3 or later.
