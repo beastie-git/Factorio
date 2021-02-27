@@ -20,9 +20,9 @@ TOKEN=""
 
 function help {
   cat <<EOF
-update-factorio.sh v 1.0
+update-mods.sh v 1.0
 
-Username, token and factorio binary path can be definded in the global variables of this script.
+Username and token can be definded in the global variables of this script.
 
 Arguments :
   -h, --help          : Print this help
