@@ -49,7 +49,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 Originally written by Jeremie SALVI <jeremie.salvi@unixyourbrain.org>.
 
-Please visit https://github.com/beastie-git/https://github.com/beastie-git/Factorio.
+Please visit <https://github.com/beastie-git/https://github.com/beastie-git/Factorio>.
 EOF
 }
 
