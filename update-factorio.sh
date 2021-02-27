@@ -95,7 +95,7 @@ do
       shift
       ;;
     -p | --path)
-      if [[ $2 ]]
+      if [[ $2 ]] && [[ -s $2 ]]
       then
         FACTORIO_BINARY_PATH=$2
         printf "Path to factorio binary : %s\n" "$2"
@@ -116,7 +116,7 @@ then
 fi
 
 #Get server version :
-SERVER_VERSION=$(bin/x64/factorio --version | awk '/Version:/ {print $2}')
+SERVER_VERSION=$($FACTORIO_BINARY_PATH --version | awk '/Version:/ {print $2}')
 printf "[update-factorio.sh] server version : %s\n" "$SERVER_VERSION"
 
 #Get latest stable version :
@@ -148,7 +148,7 @@ else
       if [[ $ERROR == "0" ]]
       then
         printf "[update-factorio.sh] Applying patch...\n"
-        bin/x64/factorio --apply-update updates/update-$SERVER_VERSION-$LATEST_STABLE_VERSION.zip
+        $FACTORIO_BINARY_PATH --apply-update updates/update-$SERVER_VERSION-$LATEST_STABLE_VERSION.zip
         if [[ $? ]]
         then
           printf "[update-factorio.sh] Patch applied sucessfull\n"
